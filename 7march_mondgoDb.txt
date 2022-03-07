@@ -1,0 +1,1257 @@
+Your environment has been set up for using Node.js 16.13.2 (x64) and npm.
+
+C:\Users\Shradha>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("0d44e0db-b8d3-4ff0-a279-00bc327f13a4") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-07T17:40:12.206+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+1stMongo  0.000GB
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+> db
+test
+> use comments
+switched to db comments
+> db
+comments
+> show collections
+> db.createCollections("comments")
+uncaught exception: TypeError: db.createCollections is not a function :
+@(shell):1:1
+> db.createCollections('comments')
+uncaught exception: TypeError: db.createCollections is not a function :
+@(shell):1:1
+> db.createCollection
+function(name, opt) {
+    var options = opt || {};
+
+    var cmd = {create: name};
+    Object.extend(cmd, options);
+
+    return this._dbCommand(cmd);
+}
+> db.createCollection("comments")
+{ "ok" : 1 }
+> db.comments.insert({"name":"Suman", "age" :22})
+WriteResult({ "nInserted" : 1 })
+> de.comments.insertMany([{
+...     "name":"Ikigai",
+...     "lang":"Japanese",
+...     "Place":"Japan",
+... },
+... {
+...     "name":"The shining",
+...     "lang":"English",
+...     "Place":"US",
+... },
+...
+...
+> ])
+uncaught exception: SyntaxError: expected expression, got ']' :
+@(shell):1:0
+> de.comments.insertMany([{
+...     "name":"Ikigai",
+...     "lang":"Japanese",
+...     "Place":"Japan",
+... },
+... {
+...     "name":"The shining",
+...     "lang":"English",
+...     "Place":"US",
+... }
+...
+...
+> ])
+uncaught exception: SyntaxError: expected expression, got ']' :
+@(shell):1:0
+> db.comments.insertMany([{
+...     "name":"Ikigai",
+...     "lang":"Japanese",
+...     "Place":"Japan",
+... },
+... {
+...     "name":"The shining",
+...     "lang":"English",
+...     "Place":"US",
+... },
+...
+...
+> ])
+uncaught exception: SyntaxError: expected expression, got ']' :
+@(shell):1:0
+> clear
+uncaught exception: ReferenceError: clear is not defined :
+@(shell):1:1
+> db.users.insertMany([{"firstName": "Prateek", "lastName": "Shukla"}, {"firstName": "Prateek", "lastName": "Sharma"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("622611e1e698dd4b31083c1d"),
+                ObjectId("622611e1e698dd4b31083c1e")
+        ]
+}
+> db.comments.find()
+{ "_id" : ObjectId("62260ef3e698dd4b31083c1c"), "name" : "Suman", "age" : 22 }
+> db.comments.insertMany([{"firstName": "Prateek", "lastName": "Shukla"}, {"firstName": "Prateek", "lastName": "Sharma"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62261272e698dd4b31083c1f"),
+                ObjectId("62261272e698dd4b31083c20")
+        ]
+}
+> db.comments.find()
+{ "_id" : ObjectId("62260ef3e698dd4b31083c1c"), "name" : "Suman", "age" : 22 }
+{ "_id" : ObjectId("62261272e698dd4b31083c1f"), "firstName" : "Prateek", "lastName" : "Shukla" }
+{ "_id" : ObjectId("62261272e698dd4b31083c20"), "firstName" : "Prateek", "lastName" : "Sharma" }
+> db.comments.find().pretty()
+{
+        "_id" : ObjectId("62260ef3e698dd4b31083c1c"),
+        "name" : "Suman",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c1f"),
+        "firstName" : "Prateek",
+        "lastName" : "Shukla"
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c20"),
+        "firstName" : "Prateek",
+        "lastName" : "Sharma"
+}
+> db.comments.insert({
+...
+...
+> ^C
+bye
+
+C:\Users\Shradha>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("ec6ba438-3e21-4a08-801f-f919cb276cef") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-07T17:40:12.206+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> db.commets.insert({
+...     "name":"Suman",
+...     "age":22,
+...     "Place":"Durg",
+... })
+WriteResult({ "nInserted" : 1 })
+> db.comments.find().pretty()
+>
+> show db
+uncaught exception: Error: don't know how to show [db] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> db
+test
+> use comments
+switched to db comments
+> db
+comments
+> db.comments.find().pretty()
+{
+        "_id" : ObjectId("62260ef3e698dd4b31083c1c"),
+        "name" : "Suman",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c1f"),
+        "firstName" : "Prateek",
+        "lastName" : "Shukla"
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c20"),
+        "firstName" : "Prateek",
+        "lastName" : "Sharma"
+}
+> db.commets.insert({
+...     "name":"Suman",
+...     "age":22,
+...     "Place":"Durg",
+... })
+WriteResult({ "nInserted" : 1 })
+> db.comments.find().pretty()
+{
+        "_id" : ObjectId("62260ef3e698dd4b31083c1c"),
+        "name" : "Suman",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c1f"),
+        "firstName" : "Prateek",
+        "lastName" : "Shukla"
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c20"),
+        "firstName" : "Prateek",
+        "lastName" : "Sharma"
+}
+> db.commets.insert({
+...     "name":"Shraddha",
+...     "age":24,
+...     "Place":"Durg",
+... })
+WriteResult({ "nInserted" : 1 })
+> db.comments.find().pretty()
+{
+        "_id" : ObjectId("62260ef3e698dd4b31083c1c"),
+        "name" : "Suman",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c1f"),
+        "firstName" : "Prateek",
+        "lastName" : "Shukla"
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c20"),
+        "firstName" : "Prateek",
+        "lastName" : "Sharma"
+}
+> db.commets.insert({
+...     "name":"Darkness",
+...     "lang":"Korean",
+...     "Place":"Korea",
+... })
+WriteResult({ "nInserted" : 1 })
+> db.comments.insert({
+...     "name":"Darkness",
+...     "lang":"Korean",
+...     "Place":"Korea",
+... })
+WriteResult({ "nInserted" : 1 })
+> db.comments.find().pretty()
+{
+        "_id" : ObjectId("62260ef3e698dd4b31083c1c"),
+        "name" : "Suman",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c1f"),
+        "firstName" : "Prateek",
+        "lastName" : "Shukla"
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c20"),
+        "firstName" : "Prateek",
+        "lastName" : "Sharma"
+}
+{
+        "_id" : ObjectId("6226154e1576e301e1114204"),
+        "name" : "Darkness",
+        "lang" : "Korean",
+        "Place" : "Korea"
+}
+> db.comments.find({"lang":"Korean"})
+{ "_id" : ObjectId("6226154e1576e301e1114204"), "name" : "Darkness", "lang" : "Korean", "Place" : "Korea" }
+> db.comments.find().limit(2)
+{ "_id" : ObjectId("62260ef3e698dd4b31083c1c"), "name" : "Suman", "age" : 22 }
+{ "_id" : ObjectId("62261272e698dd4b31083c1f"), "firstName" : "Prateek", "lastName" : "Shukla" }
+> db.comments.find().limit(2).pretty()
+{
+        "_id" : ObjectId("62260ef3e698dd4b31083c1c"),
+        "name" : "Suman",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62261272e698dd4b31083c1f"),
+        "firstName" : "Prateek",
+        "lastName" : "Shukla"
+}
+> db.comments.find().limit(2).count()
+4
+> db.comments.find({"name":"suman"}).count()
+0
+> db.comments.find({"name":"Suman"}).count()
+1
+> ^C
+bye
+
+C:\Users\Shradha>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("31ab7361-7399-4d10-a522-9c31b9778f93") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-07T17:40:12.206+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use users
+switched to db users
+> db
+users
+> db.users.insert({
+...     "first_name" :"Rose",
+...
+...     "last_name" :"Park",
+...
+...     "email":"Rose@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 1,
+...
+...     "age" : 24,
+... })
+WriteResult({ "nInserted" : 1 })
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("62262c19b6a41a47c395bca0"),
+        "first_name" : "Rose",
+        "last_name" : "Park",
+        "email" : "Rose@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 1,
+        "age" : 24
+}
+> db.users.insertMany({
+...     "first_name" :"Jennie",
+...
+...     "last_name" :"Kim",
+...
+...     "email":"Jennie@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 2,
+...
+...     "age" : 25,
+... },
+... {
+...     "first_name" :"Lisa",
+...
+...     "last_name" :"Manoban",
+...
+...     "email":"Lisa@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 3,
+...
+...     "age" : 24,
+... },
+... {
+...     "first_name" :"Jisso",
+...
+...     "last_name" :"Kim",
+...
+...     "email":"Jisso@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 4,
+...
+...     "age" : 26,
+... },
+... {
+...     "first_name" :"Momo",
+...
+...     "last_name" :"Park",
+...
+...     "email":"Momo@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 5,
+...
+...     "age" : 25,
+... },
+... {
+...     "first_name" :"Sunny",
+...
+...     "last_name" :"Chaeyong",
+...
+...     "email":"Sunny@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 6,
+...
+...     "age" : 27,
+... },
+... {
+...     "first_name" :"Sana",
+...
+...     "last_name" :"hhung",
+...
+...     "email":"Sana@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 7,
+...
+...     "age" : 24,
+... },
+... {
+...     "first_name" :"SongJi",
+...
+...     "last_name" :"Hyo",
+...
+...     "email":"SongJi@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 8,
+...
+...     "age" : 45,
+... },
+... {
+...     "first_name" :"Somi",
+...
+...     "last_name" :"Jin",
+...
+...     "email":"Somi@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 9,
+...
+...     "age" : 35,
+... },
+... {
+...     "first_name" :"Daheyon",
+...
+...     "last_name" :"Park",
+...
+...     "email":"Daheyon@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 10,
+...
+...     "age" : 27,
+... },
+... )
+uncaught exception: TypeError: documents.map is not a function :
+DBCollection.prototype.insertMany@src/mongo/shell/crud_api.js:307:17
+@(shell):1:1
+> db.users.insertMany({
+...     "first_name" :"Jennie",
+...
+...     "last_name" :"Kim",
+...
+...     "email":"Jennie@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 2,
+...
+...     "age" : 25,
+... },
+... {
+...     "first_name" :"Lisa",
+...
+...     "last_name" :"Manoban",
+...
+...     "email":"Lisa@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 3,
+...
+...     "age" : 24,
+... },
+... {
+...     "first_name" :"Jisso",
+...
+...     "last_name" :"Kim",
+...
+...     "email":"Jisso@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 4,
+...
+...     "age" : 26,
+... },)
+uncaught exception: TypeError: documents.map is not a function :
+DBCollection.prototype.insertMany@src/mongo/shell/crud_api.js:307:17
+@(shell):1:1
+> db.users.insertMany([{
+...     "first_name" :"Jennie",
+...
+...     "last_name" :"Kim",
+...
+...     "email":"Jennie@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 2,
+...
+...     "age" : 25,
+... },
+... {
+...     "first_name" :"Lisa",
+...
+...     "last_name" :"Manoban",
+...
+...     "email":"Lisa@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 3,
+...
+...     "age" : 24,
+... },
+... {
+...     "first_name" :"Jisso",
+...
+...     "last_name" :"Kim",
+...
+...     "email":"Jisso@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 4,
+...
+...     "age" : 26,
+... },
+... {
+...     "first_name" :"Momo",
+...
+...     "last_name" :"Park",
+...
+...     "email":"Momo@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 5,
+...
+...     "age" : 25,
+... },
+... {
+...     "first_name" :"Sunny",
+...
+...     "last_name" :"Chaeyong",
+...
+...     "email":"Sunny@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 6,
+...
+...     "age" : 27,
+... },
+... {
+...     "first_name" :"Sana",
+...
+...     "last_name" :"hhung",
+...
+...     "email":"Sana@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 7,
+...
+...     "age" : 24,
+... },
+... {
+...     "first_name" :"SongJi",
+...
+...     "last_name" :"Hyo",
+...
+...     "email":"SongJi@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 8,
+...
+...     "age" : 45,
+... },
+... {
+...     "first_name" :"Somi",
+...
+...     "last_name" :"Jin",
+...
+...     "email":"Somi@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 9,
+...
+...     "age" : 35,
+... },
+... {
+...     "first_name" :"Daheyon",
+...
+...     "last_name" :"Park",
+...
+...     "email":"Daheyon@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 10,
+...
+...     "age" : 24,
+... },
+... ])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62262ea8b6a41a47c395bca1"),
+                ObjectId("62262ea8b6a41a47c395bca2"),
+                ObjectId("62262ea8b6a41a47c395bca3"),
+                ObjectId("62262ea8b6a41a47c395bca4"),
+                ObjectId("62262ea8b6a41a47c395bca5"),
+                ObjectId("62262ea8b6a41a47c395bca6"),
+                ObjectId("62262ea8b6a41a47c395bca7"),
+                ObjectId("62262ea8b6a41a47c395bca8"),
+                ObjectId("62262ea8b6a41a47c395bca9")
+        ]
+}
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("62262c19b6a41a47c395bca0"),
+        "first_name" : "Rose",
+        "last_name" : "Park",
+        "email" : "Rose@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 1,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca1"),
+        "first_name" : "Jennie",
+        "last_name" : "Kim",
+        "email" : "Jennie@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 2,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca2"),
+        "first_name" : "Lisa",
+        "last_name" : "Manoban",
+        "email" : "Lisa@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 3,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca3"),
+        "first_name" : "Jisso",
+        "last_name" : "Kim",
+        "email" : "Jisso@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 4,
+        "age" : 26
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca4"),
+        "first_name" : "Momo",
+        "last_name" : "Park",
+        "email" : "Momo@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 5,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca5"),
+        "first_name" : "Sunny",
+        "last_name" : "Chaeyong",
+        "email" : "Sunny@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 6,
+        "age" : 27
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca6"),
+        "first_name" : "Sana",
+        "last_name" : "hhung",
+        "email" : "Sana@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 7,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca7"),
+        "first_name" : "SongJi",
+        "last_name" : "Hyo",
+        "email" : "SongJi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 8,
+        "age" : 45
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca8"),
+        "first_name" : "Somi",
+        "last_name" : "Jin",
+        "email" : "Somi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 9,
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca9"),
+        "first_name" : "Daheyon",
+        "last_name" : "Park",
+        "email" : "Daheyon@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 10,
+        "age" : 24
+}
+> db.findOne({"name":"Jennie"})
+uncaught exception: TypeError: db.findOne is not a function :
+@(shell):1:1
+> db.users.findOne({"name":"Jennie"})
+null
+> db.users.findOne({"first_name":"Jennie"})
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca1"),
+        "first_name" : "Jennie",
+        "last_name" : "Kim",
+        "email" : "Jennie@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 2,
+        "age" : 25
+}
+> db.users.update({"name":"Tzuyu"},
+... {
+...
+...     "first_name" :"Tzuyu",
+...
+...     "last_name" :"Kim",
+...
+...     "email":"Tzuyu@gmail.com",
+...
+...     "gender":"Female",
+...
+...     "ip_address" : 11,
+...
+...     "age" : 24,
+... },{"upsert":"true"})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 1,
+        "nModified" : 0,
+        "_id" : ObjectId("6226322545c4a332e9fd1f96")
+})
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("62262c19b6a41a47c395bca0"),
+        "first_name" : "Rose",
+        "last_name" : "Park",
+        "email" : "Rose@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 1,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca1"),
+        "first_name" : "Jennie",
+        "last_name" : "Kim",
+        "email" : "Jennie@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 2,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca2"),
+        "first_name" : "Lisa",
+        "last_name" : "Manoban",
+        "email" : "Lisa@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 3,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca3"),
+        "first_name" : "Jisso",
+        "last_name" : "Kim",
+        "email" : "Jisso@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 4,
+        "age" : 26
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca4"),
+        "first_name" : "Momo",
+        "last_name" : "Park",
+        "email" : "Momo@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 5,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca5"),
+        "first_name" : "Sunny",
+        "last_name" : "Chaeyong",
+        "email" : "Sunny@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 6,
+        "age" : 27
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca6"),
+        "first_name" : "Sana",
+        "last_name" : "hhung",
+        "email" : "Sana@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 7,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca7"),
+        "first_name" : "SongJi",
+        "last_name" : "Hyo",
+        "email" : "SongJi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 8,
+        "age" : 45
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca8"),
+        "first_name" : "Somi",
+        "last_name" : "Jin",
+        "email" : "Somi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 9,
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca9"),
+        "first_name" : "Daheyon",
+        "last_name" : "Park",
+        "email" : "Daheyon@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 10,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("6226322545c4a332e9fd1f96"),
+        "first_name" : "Tzuyu",
+        "last_name" : "Kim",
+        "email" : "Tzuyu@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 11,
+        "age" : 24
+}
+> db.users.updateMany({"gender":"Female"},{ $set :{"Country":"South-Korea"}})
+{ "acknowledged" : true, "matchedCount" : 11, "modifiedCount" : 11 }
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("62262c19b6a41a47c395bca0"),
+        "first_name" : "Rose",
+        "last_name" : "Park",
+        "email" : "Rose@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 1,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca1"),
+        "first_name" : "Jennie",
+        "last_name" : "Kim",
+        "email" : "Jennie@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 2,
+        "age" : 25,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca2"),
+        "first_name" : "Lisa",
+        "last_name" : "Manoban",
+        "email" : "Lisa@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 3,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca3"),
+        "first_name" : "Jisso",
+        "last_name" : "Kim",
+        "email" : "Jisso@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 4,
+        "age" : 26,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca4"),
+        "first_name" : "Momo",
+        "last_name" : "Park",
+        "email" : "Momo@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 5,
+        "age" : 25,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca5"),
+        "first_name" : "Sunny",
+        "last_name" : "Chaeyong",
+        "email" : "Sunny@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 6,
+        "age" : 27,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca6"),
+        "first_name" : "Sana",
+        "last_name" : "hhung",
+        "email" : "Sana@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 7,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca7"),
+        "first_name" : "SongJi",
+        "last_name" : "Hyo",
+        "email" : "SongJi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 8,
+        "age" : 45,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca8"),
+        "first_name" : "Somi",
+        "last_name" : "Jin",
+        "email" : "Somi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 9,
+        "age" : 35,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca9"),
+        "first_name" : "Daheyon",
+        "last_name" : "Park",
+        "email" : "Daheyon@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 10,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("6226322545c4a332e9fd1f96"),
+        "first_name" : "Tzuyu",
+        "last_name" : "Kim",
+        "email" : "Tzuyu@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 11,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+> ^C
+bye
+
+C:\Users\Shradha>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("b421b286-c562-40cd-9628-1a0b30d1f00a") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-07T17:40:12.206+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use users
+switched to db users
+> db
+users
+> db.users.remove({"age":{"et":35}})
+WriteResult({ "nRemoved" : 0 })
+> db.users.remove({"age":{"$eq":35}})
+WriteResult({ "nRemoved" : 1 })
+> db.users.remove({"age":{"eq":35}})
+WriteResult({ "nRemoved" : 0 })
+> db.users.remove({"age":{"$eq":30}})
+WriteResult({ "nRemoved" : 0 })
+> db.users.remove({"age":{"eq":27}})
+WriteResult({ "nRemoved" : 0 })
+> db.users.deleteOne({"age":24})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca1"),
+        "first_name" : "Jennie",
+        "last_name" : "Kim",
+        "email" : "Jennie@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 2,
+        "age" : 25,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca2"),
+        "first_name" : "Lisa",
+        "last_name" : "Manoban",
+        "email" : "Lisa@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 3,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca3"),
+        "first_name" : "Jisso",
+        "last_name" : "Kim",
+        "email" : "Jisso@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 4,
+        "age" : 26,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca4"),
+        "first_name" : "Momo",
+        "last_name" : "Park",
+        "email" : "Momo@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 5,
+        "age" : 25,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca5"),
+        "first_name" : "Sunny",
+        "last_name" : "Chaeyong",
+        "email" : "Sunny@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 6,
+        "age" : 27,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca6"),
+        "first_name" : "Sana",
+        "last_name" : "hhung",
+        "email" : "Sana@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 7,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca7"),
+        "first_name" : "SongJi",
+        "last_name" : "Hyo",
+        "email" : "SongJi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 8,
+        "age" : 45,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca9"),
+        "first_name" : "Daheyon",
+        "last_name" : "Park",
+        "email" : "Daheyon@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 10,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("6226322545c4a332e9fd1f96"),
+        "first_name" : "Tzuyu",
+        "last_name" : "Kim",
+        "email" : "Tzuyu@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 11,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+> db.users.deleteMany({"age":25})
+{ "acknowledged" : true, "deletedCount" : 2 }
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca2"),
+        "first_name" : "Lisa",
+        "last_name" : "Manoban",
+        "email" : "Lisa@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 3,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca3"),
+        "first_name" : "Jisso",
+        "last_name" : "Kim",
+        "email" : "Jisso@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 4,
+        "age" : 26,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca5"),
+        "first_name" : "Sunny",
+        "last_name" : "Chaeyong",
+        "email" : "Sunny@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 6,
+        "age" : 27,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca6"),
+        "first_name" : "Sana",
+        "last_name" : "hhung",
+        "email" : "Sana@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 7,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca7"),
+        "first_name" : "SongJi",
+        "last_name" : "Hyo",
+        "email" : "SongJi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 8,
+        "age" : 45,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca9"),
+        "first_name" : "Daheyon",
+        "last_name" : "Park",
+        "email" : "Daheyon@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 10,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("6226322545c4a332e9fd1f96"),
+        "first_name" : "Tzuyu",
+        "last_name" : "Kim",
+        "email" : "Tzuyu@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 11,
+        "age" : 24,
+        "Country" : "South-Korea"
+}
+> db.users.deleteMany({"age":24})
+{ "acknowledged" : true, "deletedCount" : 4 }
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca3"),
+        "first_name" : "Jisso",
+        "last_name" : "Kim",
+        "email" : "Jisso@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 4,
+        "age" : 26,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca5"),
+        "first_name" : "Sunny",
+        "last_name" : "Chaeyong",
+        "email" : "Sunny@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 6,
+        "age" : 27,
+        "Country" : "South-Korea"
+}
+{
+        "_id" : ObjectId("62262ea8b6a41a47c395bca7"),
+        "first_name" : "SongJi",
+        "last_name" : "Hyo",
+        "email" : "SongJi@gmail.com",
+        "gender" : "Female",
+        "ip_address" : 8,
+        "age" : 45,
+        "Country" : "South-Korea"
+}
+> db. dropDatabase()
+{ "ok" : 1 }
+>
+>
+> ^C
+bye
+
